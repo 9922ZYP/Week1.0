@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>数组去重</h1>
+    <script type="text/javascript">
+        //one
+        var arr=[2,3,1,2,3,3,7,9,10,3,2];
+        function deWeightOne(arr){
+            var arrTemp=[];
+            for(var i=0;i<arr.length;i++){
+                if(arrTemp.indexOf(arr[i])==-1){
+                    arrTemp.push(arr[i])
+                }
+            }
+            return arrTemp
+        }
+        console.log(deWeightOne(arr))
+
+        //two
+        function deWeightTwo(arr){
+            arr.sort()
+            var arrTemp=[arr[0]];
+            for(var i=0;i<arr.length;i++){
+               if(arr[i]!=arrTemp[arrTemp.length-1]){
+                   arrTemp.push(arr[i])
+               }
+            }
+            return arrTemp
+        }
+        console.log(deWeightTwo(arr))
+
+    </script>
+</body>
+</html>
